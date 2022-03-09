@@ -6,7 +6,7 @@ public class Admin {
     private String password;
     private  Integer tel;
 
-    public Admin(Integer id, String name, String password, Integer tel) {
+    public Admin() {
         this.id = id;
         this.name = name;
         this.password = password;
@@ -18,9 +18,6 @@ public class Admin {
         this.tel = tel;
     }
 
-    public Admin(Integer id) {
-        this.id = id;
-    }
     public Admin( String name, String password) {
         this.name = name;
         this.password = password;

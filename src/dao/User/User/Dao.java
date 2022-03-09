@@ -5,9 +5,9 @@ import entiy.User;
 import java.util.List;
 
 public interface Dao {
-     void add(User user);
+     int add(User user);
      User findUserbyname(String name);
-     void  Update(User user);
+     int Update(User user);
      List<User> Findall();
-     void  delete(User user);
+     int delete(User user);
 }

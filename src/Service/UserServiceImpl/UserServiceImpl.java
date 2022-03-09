@@ -10,19 +10,12 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     Dao userDao = new UserDaoImpl();
     @Override
-    public boolean addUser(User u) {
-        List<User> list = userDao.Findall();
-     for (int i = 0; i<list.size(); i++){
-         if(list.get(i).getName().equals(u.getName())){
-             return  false;
-         }
-     }
-     userDao.add(u);
-     return true;
+    public int addUser(User u) {
+     return userDao.add(u);
     }
 
     @Override
-    public void delete(User u) {userDao.delete(u);}
+    public int delete(User u) {return userDao.delete(u);}
 
     @Override
     public List<User>Findall() { return userDao.Findall();}
@@ -43,7 +36,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update(User user) {
-        userDao.Update(user);
+    public int update(User user) {
+        return userDao.Update(user);
     }
 }

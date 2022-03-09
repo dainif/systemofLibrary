@@ -5,12 +5,12 @@ import entiy.User;
 import java.util.List;
 
 public interface UserService {
-    boolean addUser(User u);
-    void  delete(User u);
+    int addUser(User u);
+    int delete(User u);
      List<User>Findall();
    void brrow();
    void back();
    User findUserbyname(String name);
-   void  update(User user);
+   int update(User user);
 
 }

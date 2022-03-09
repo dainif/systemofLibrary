@@ -6,9 +6,9 @@ public class User {
     private String password;
     private String brrow;
     private  String back;
-    private String tel;
+    private Integer tel;
 
-    public User(String name, String password,String tel) {
+    public User(String name, String password,Integer tel) {
 
         this.name = name;
         this.password = password;
@@ -32,11 +32,11 @@ public class User {
                 '}';
     }
 
-    public void setTel(String tel) {
+    public void setTel(Integer tel) {
         this.tel = tel;
     }
 
-    public String getTel() {
+    public Integer getTel() {
         return tel;
     }
 

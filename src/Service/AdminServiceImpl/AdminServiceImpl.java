@@ -10,24 +10,17 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
     AdminDao adminDao = new AdminDaoImpl();
     @Override
-    public boolean add(Admin admin) {
-        List<Admin> list = adminDao.FindAll();
-        for (int i=0; i<list.size();i++){
-            if(list.get(i).getName().equals(admin.getName())){
-                return false;
-            }
-        }
-        adminDao.Adminadd(admin);
-        return true;
+    public int add(Admin admin) {
+       return adminDao.Adminadd(admin);
     }
 
     @Override
-    public void AdminUpdate(Admin admin) {
-    adminDao.AdminUpdate(admin);
+    public int AdminUpdate(Admin admin) {
+    return adminDao.AdminUpdate(admin);
     }
 
     @Override
-    public void Admindelete(Admin admin) {
+    public int Admindelete(Admin admin) {return adminDao.Admindelete(admin);
 
     }
 
@@ -39,5 +32,10 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Admin findAdminByName(String name) {
         return adminDao.findAdminByName(name);
+    }
+
+    @Override
+    public Admin findAdminByNamewithpsd(Admin admin) {
+        return adminDao.findAdminByNamewithpsd(admin);
     }
 }

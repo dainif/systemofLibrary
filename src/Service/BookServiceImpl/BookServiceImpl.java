@@ -5,7 +5,6 @@ import BookDao.BookDaoImpl.BookDaoImpl;
 import Service.BookService;
 import entiy.Book;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
@@ -16,20 +15,13 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public boolean BookAdd(Book book) {
-        List<Book> list= bookDao.FindAllBook();
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).getBookname().equals(book.getBookname())){
-                return false;
-            }
-        }
-        bookDao.add(book);
-        return true;
+    public int BookAdd(Book book) {
+        return bookDao.add(book);
     }
 
     @Override
-    public void Bookdelete(Book book) {
-    bookDao.delete(book);
+    public int Bookdelete(Book book) {
+    return bookDao.delete(book);
     }
 
     @Override
@@ -38,7 +30,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void Update(Book book) {
-        bookDao.Update(book);
+    public int Update(Book book) {
+      return  bookDao.Update(book);
     }
 }

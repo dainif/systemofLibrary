@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface BookDao {
     Book findBookByName(String name);
-    void add(Book book);
-    void delete(Book book);
+    int add(Book book);
+    int delete(Book book);
     List<Book>FindAllBook();
-    void Update(Book book);
+    int Update(Book book);
 }

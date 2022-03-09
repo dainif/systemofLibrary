@@ -40,6 +40,9 @@ public class Book {
         this.bookname = bookname;
         this.num = num;
     }
+    public Book(String bookname) {
+        this.bookname = bookname;
+    }
     public void setNum(Integer num) {
         this.num = num;
     }
